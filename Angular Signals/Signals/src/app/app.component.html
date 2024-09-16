@@ -1,0 +1,21 @@
+<label>{{label}}</label>
+<br>
+<button (click)="toggleDarkMode()">Toggle</button>
+<hr>
+<label>Total Price: {{totalPrice()}}</label>
+<br>
+<input type="number" value="{{quantity()}}" (change)="changeQuantity($event)">  
+<hr>
+<div>
+  <input type="text" (input)="changeFilter($event)">
+</div>
+<br>
+<table>
+  <tr *ngFor="let product of filteredProducts()">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+  </tr>
+</table>
+<hr>
+<product-list [products]="allProducts"></product-list>
